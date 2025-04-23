@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7684d9fd-9749-4ce8-9ca1-4a1896f87cbc" name="Changes" comment="added the the Game class and its html, some example for test added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/LoadGames.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GamesDb.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GamesDb.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +50,7 @@
   "keyToString": {
     "Gradle.Fourth-Assignment-Steam-Scraper [:DBConnection.main()].executor": "Run",
     "Gradle.Fourth-Assignment-Steam-Scraper [:Parser.main()].executor": "Run",
+    "Gradle.ParserTest.testSortByName.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -77,7 +76,7 @@
       <recent name="C:\Users\Lenovo\OneDrive\Desktop\AP\html pparser\New folder\Fourth-Assignment-HTML-Parser\src\Resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DBConnection">
+  <component name="RunManager" selected="Gradle.ParserTest.testSortByName">
     <configuration name="DBConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DBConnection" />
       <module name="HTML-Parser.main" />
@@ -118,9 +117,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ParserTest.testSortByName" />
         <item itemvalue="Application.DBConnection" />
         <item itemvalue="Application.Parser" />
-        <item itemvalue="Gradle.ParserTest.testSortByName" />
       </list>
     </recent_temporary>
   </component>
@@ -146,7 +145,7 @@
       <workItem from="1709147208766" duration="626000" />
       <workItem from="1709754207930" duration="532000" />
       <workItem from="1743338234636" duration="2449000" />
-      <workItem from="1745430358922" duration="6858000" />
+      <workItem from="1745430358922" duration="8302000" />
     </task>
     <task id="LOCAL-00001" summary="added the the Game class and its html, some example for test added">
       <created>1743341137706</created>

@@ -102,17 +102,17 @@ public class Parser
         games.forEach(System.out::println);
     }
 
-    public static void main(String[] args) throws IOException {
-        File htmlFile = new File("src/Resources/Video_Games.html");
-        Parser.setUp(htmlFile);
-
-        System.out.println("\n--- Sorted by Name ---");
-        Parser.printGames(Parser.sortByName(games));
-
-        System.out.println("\n--- Sorted by Rating ---");
-        Parser.printGames(Parser.sortByRating(games));
-
-        System.out.println("\n--- Sorted by Price ---");
-        Parser.printGames(Parser.sortByPrice(games));
-    }
+//    public static void main(String[] args) throws IOException {
+//        File htmlFile = new File("src/Resources/Video_Games.html");
+//        Parser.setUp(htmlFile);
+//
+//        System.out.println("\n--- Sorted by Name ---");
+//        Parser.printGames(Parser.sortByName(games));
+//
+//        System.out.println("\n--- Sorted by Rating ---");
+//        Parser.printGames(Parser.sortByRating(games));
+//
+//        System.out.println("\n--- Sorted by Price ---");
+//        Parser.printGames(Parser.sortByPrice(games));
+//    }
 }

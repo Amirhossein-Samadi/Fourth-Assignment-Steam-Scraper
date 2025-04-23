@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
 }
 
 group 'org.example'
@@ -15,6 +17,11 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.14.3'
     implementation 'org.xerial:sqlite-jdbc:3.43.2.0'
     implementation 'org.mindrot:jbcrypt:0.4'
+}
+
+javafx {
+    version = "21"
+    modules = [ 'javafx.controls' ]
 }
 
 test {
