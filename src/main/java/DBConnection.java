@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 public class DBConnection {
 
-    public static Connection DBConnection() {
+    public static Connection dBConnection() {
         Connection conn = null;
         try {
             String url = "jdbc:sqlite:C:\\my data\\AP\\Fourth-Assignment-Steam-Scraper\\src\\main\\java\\GamesDb.db";
@@ -17,7 +17,7 @@ public class DBConnection {
     }
 
     public static void main(String[] args) {
-        DBConnection();
+        dBConnection();
     }
 
 }
