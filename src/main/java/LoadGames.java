@@ -1,10 +1,14 @@
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoadGames
 {
-    public static Game loadGames() throws SQLException
+    public static List<Game> games1 = new ArrayList<>();
+
+    public static void loadGames() throws SQLException
     {
         String sql = "SELECT * FROM VideoGames";
 
@@ -21,13 +25,12 @@ public class LoadGames
 
                 Game game = new Game(name, rating, price);
 
-                return game;
+                games1.add(game);
             }
         } catch (Exception e)
         {
             System.out.println("خطا در خواندن داده‌ها: " + e.getMessage());
         }
-        return null;
     }
 
 }

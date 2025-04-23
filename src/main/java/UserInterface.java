@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 public class UserInterface extends Application
 {
-    public static void showUserPage()
+    public static void showUserInterface() throws Exception
     {
         Stage stage = new Stage();
         stage.setTitle("Video Games");
@@ -31,6 +31,9 @@ public class UserInterface extends Application
 
         TableView<Game> gameTableView = new TableView<>();
 
+        gameTableView.setPrefWidth(450);
+        gameTableView.setPrefHeight(600);
+
         TableColumn<Game, String> nameColumn = new TableColumn<>("Name");
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 
@@ -40,7 +43,7 @@ public class UserInterface extends Application
         TableColumn<Game, Double> priceColumn = new TableColumn<>("Price");
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        ObservableList<Game> gameObservableList = FXCollections.observableArrayList(Parser.games);
+        ObservableList<Game> gameObservableList = FXCollections.observableArrayList(LoadGames.games1);
 
         gameTableView.getColumns().addAll(nameColumn, ratingColumn, priceColumn);
 
