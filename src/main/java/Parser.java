@@ -52,15 +52,25 @@ public class Parser
             }
         }
     }
-    
+
         return sortedByRating;
     }
 
     public List<Game> sortByPrice()
     {
         List<Game> sortedByPrice = new ArrayList<>(games);
-        // Sort games by price (most)
-        //TODO
+
+        // Bubble Sort
+        for (int i = 0; i < sortedByPrice.size() - 1; i++) {
+            for (int j = 0; j < sortedByPrice.size() - i - 1; j++) {
+                if (sortedByPrice.get(j).getPrice() > sortedByPrice.get(j + 1).getPrice()) {
+                    Game temp = sortedByPrice.get(j);
+                    sortedByPrice.set(j, sortedByPrice.get(j + 1));
+                    sortedByPrice.set(j + 1, temp);
+                }
+            }
+        }
+
         return sortedByPrice;
     }
 
