@@ -81,27 +81,18 @@ public class Parser
         File input = new File("src/Resources/Video_Games.html");
         Document doc = Jsoup.parse(input, "UTF-8");
 
-        //Parse the HTML file using Jsoup
-        //TODO
-
         Elements gameElements = doc.getElementsByClass("game");
-
-        // Extract data from the HTML
-        //TODO
 
         for (Element game : gameElements) {
             String name = game.getElementsByClass("game-name").text();
-//            System.out.println("Text: " + name);
 
             String rating = game.getElementsByClass("game-rating").text();
             String firstRate = rating.split("/")[0];
             double rateDouble = Double.parseDouble(firstRate);
-//            System.out.println("Rating: " + rateDouble);
 
             String price = game.getElementsByClass("game-price").text();
             String firstPrice = price.split(" ")[0];
             int priceInt = Integer.parseInt(firstPrice);
-//            System.out.println("Price: " + priceInt);
 
             games.add(new Game(name, rateDouble, priceInt));
         }
