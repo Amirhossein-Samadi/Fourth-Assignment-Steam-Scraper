@@ -74,16 +74,23 @@ public class Parser
         return sortedByPrice;
     }
 
-    public void setUp() throws IOException {
+    public void setUp(File file) throws IOException {
 
-        //Parse the HTML file using Jsoup
-        //TODO
+        Document doc = Jsoup.parse(file, StandardCharsets.UTF_8.name());
+        Elements names = doc.select("span.game-name");
+        Elements ratings = doc.select("span.game-rating");
+        Elements prices = doc.select("span.game-price");
 
-        // Extract data from the HTML
-        //TODO
+        for (int i = 0; i < names.size(); i++)
+        {
+            String name = names.get(i).text();
+            double rating = Double.parseDouble(ratings.get(i).text());
+            double price = Double.parseDouble(prices.get(i).text().replace("$", ""));
 
-        // Iterate through each Game div to extract Game data
-        //TODO
+            games.add(new Game(name, rating, price));
+        }
+
+
     }
 
     public static void main(String[] args) {

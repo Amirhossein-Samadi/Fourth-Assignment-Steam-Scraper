@@ -4,9 +4,9 @@ public class Game {
 
     private String name;
     private double rating;
-    private int price;
+    private double price;
 
-    public Game(String name, double rating, int price)
+    public Game(String name, double rating, double price)
     {
         this.name = name;
         this.rating = rating;
@@ -22,7 +22,7 @@ public class Game {
         return rating;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
