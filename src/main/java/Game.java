@@ -28,9 +28,9 @@ public class Game {
 
     @Override
     public String toString() {
-        //TODO
-        return "";
+        return String.format("Name: %s | Rating: %.1f | Price: $%.2f", name, rating, price);
     }
+
 
     @Override
     public boolean equals(Object o)
