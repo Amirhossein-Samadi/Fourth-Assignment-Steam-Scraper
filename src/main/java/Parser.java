@@ -4,6 +4,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.*;
 import java.nio.charset.StandardCharsets;
 
@@ -93,6 +94,12 @@ public class Parser
             String price = game.getElementsByClass("game-price").text();
             String firstPrice = price.split(" ")[0];
             int priceInt = Integer.parseInt(firstPrice);
+
+            try {
+                InsertGame.insertGame(DBConnection.dBConnection(), name, rateDouble, priceInt);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
 
             games.add(new Game(name, rateDouble, priceInt));
         }
