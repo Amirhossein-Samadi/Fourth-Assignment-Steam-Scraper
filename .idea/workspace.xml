@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7684d9fd-9749-4ce8-9ca1-4a1896f87cbc" name="Changes" comment="added the the Game class and its html, some example for test added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +122,7 @@
       <workItem from="1709147208766" duration="626000" />
       <workItem from="1709754207930" duration="532000" />
       <workItem from="1743338234636" duration="2449000" />
-      <workItem from="1745430358922" duration="1179000" />
+      <workItem from="1745430358922" duration="1984000" />
     </task>
     <task id="LOCAL-00001" summary="added the the Game class and its html, some example for test added">
       <created>1743341137706</created>

@@ -6,7 +6,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
-public class Parser {
+public class Parser
+{
     static List<Game> games = new ArrayList<>();
 
     public List<Game> sortByName()
@@ -14,13 +15,16 @@ public class Parser {
         List<Game> sortedByName = new ArrayList<>(games);
 
         // Bubble Sort
-        public static void sortByName(List<Game> games) {
-            for (int i = 0; i < games.size() - 1; i++) {
-                for (int j = 0; j < games.size() - i - 1; j++) {
-                    if (games.get(j).getName().compareTo(games.get(j + 1).getName()) > 0) {
-                        Game temp = games.get(j);
-                        games.set(j, games.get(j + 1));
-                        games.set(j + 1, temp);
+        {
+            for (int i = 0; i < sortedByName.size() - 1; i++)
+            {
+                for (int j = 0; j < sortedByName.size() - i - 1; j++)
+                {
+                    if (sortedByName.get(j).getName().compareTo(sortedByName.get(j + 1).getName()) > 0)
+                    {
+                        Game temp = sortedByName.get(j);
+                        sortedByName.set(j, sortedByName.get(j + 1));
+                        sortedByName.set(j + 1, temp);
                     }
                 }
             }
@@ -32,12 +36,28 @@ public class Parser {
     public List<Game> sortByRating()
     {
         List<Game> sortedByRating = new ArrayList<>(games);
-        // Sort games by rating (most)
-        //TODO
+
+        // Bubble Sort
+        {
+        for (int i = 0; i < sortedByRating.size() - 1; i++)
+        {
+            for (int j = 0; j < sortedByRating.size() - i - 1; j++)
+            {
+                if (sortedByRating.get(j).getRating() < sortedByRating.get(j + 1).getRating())
+                {
+                    Game temp = sortedByRating.get(j);
+                    sortedByRating.set(j, sortedByRating.get(j + 1));
+                    sortedByRating.set(j + 1, temp);
+                }
+            }
+        }
+    }
+    
         return sortedByRating;
     }
 
-    public List<Game> sortByPrice(){
+    public List<Game> sortByPrice()
+    {
         List<Game> sortedByPrice = new ArrayList<>(games);
         // Sort games by price (most)
         //TODO
