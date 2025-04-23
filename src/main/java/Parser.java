@@ -5,14 +5,16 @@ import org.jsoup.select.Elements;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.nio.charset.StandardCharsets;
+
 
 public class Parser
 {
     static List<Game> games = new ArrayList<>();
 
-    public List<Game> sortByName()
+    public static List<Game> sortByName(List<Game> games)
     {
-        List<Game> sortedByName = new ArrayList<>(games);
+        List<Game> sortedByName = new ArrayList<>(Parser.games);
 
         // Bubble Sort
         {
@@ -33,7 +35,7 @@ public class Parser
         return  sortedByName;
     }
 
-    public List<Game> sortByRating()
+    public static List<Game> sortByRating(List<Game> games)
     {
         List<Game> sortedByRating = new ArrayList<>(games);
 
@@ -56,7 +58,7 @@ public class Parser
         return sortedByRating;
     }
 
-    public List<Game> sortByPrice()
+    public static List<Game> sortByPrice(List<Game> games)
     {
         List<Game> sortedByPrice = new ArrayList<>(games);
 
@@ -74,26 +76,52 @@ public class Parser
         return sortedByPrice;
     }
 
-    public void setUp(File file) throws IOException {
+    public static void setUp(File file) throws IOException {
 
-        Document doc = Jsoup.parse(file, StandardCharsets.UTF_8.name());
-        Elements names = doc.select("span.game-name");
-        Elements ratings = doc.select("span.game-rating");
-        Elements prices = doc.select("span.game-price");
+        File input = new File("src/Resources/Video_Games.html");
+        Document doc = Jsoup.parse(input, "UTF-8");
 
-        for (int i = 0; i < names.size(); i++)
-        {
-            String name = names.get(i).text();
-            double rating = Double.parseDouble(ratings.get(i).text());
-            double price = Double.parseDouble(prices.get(i).text().replace("$", ""));
+        //Parse the HTML file using Jsoup
+        //TODO
 
-            games.add(new Game(name, rating, price));
+        Elements gameElements = doc.getElementsByClass("game");
+
+        // Extract data from the HTML
+        //TODO
+
+        for (Element game : gameElements) {
+            String name = game.getElementsByClass("game-name").text();
+//            System.out.println("Text: " + name);
+
+            String rating = game.getElementsByClass("game-rating").text();
+            String firstRate = rating.split("/")[0];
+            double rateDouble = Double.parseDouble(firstRate);
+//            System.out.println("Rating: " + rateDouble);
+
+            String price = game.getElementsByClass("game-price").text();
+            String firstPrice = price.split(" ")[0];
+            int priceInt = Integer.parseInt(firstPrice);
+//            System.out.println("Price: " + priceInt);
+
+            games.add(new Game(name, rateDouble, priceInt));
         }
-
-
     }
 
-    public static void main(String[] args) {
-        //you can test your code here before you run the unit tests
+    public static void printGames(List<Game> games) {
+        games.forEach(System.out::println);
+    }
+
+    public static void main(String[] args) throws IOException {
+        File htmlFile = new File("src/Resources/Video_Games.html");
+        Parser.setUp(htmlFile);
+
+        System.out.println("\n--- Sorted by Name ---");
+        Parser.printGames(Parser.sortByName(games));
+
+        System.out.println("\n--- Sorted by Rating ---");
+        Parser.printGames(Parser.sortByRating(games));
+
+        System.out.println("\n--- Sorted by Price ---");
+        Parser.printGames(Parser.sortByPrice(games));
     }
 }
