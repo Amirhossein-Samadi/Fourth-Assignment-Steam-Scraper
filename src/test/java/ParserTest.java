@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -19,7 +18,7 @@ public class ParserTest {
 
     @Test
     public void testSortByName() {
-        List<Game> sortedGames = handle.sortByName();
+        List<Game> sortedGames = handle.sortByName(games);
         Game g1 = new Game("Bloodborne" ,4.8,88);
         Game g2 = new Game("Gran Turismo 2" ,4.6,90);
         Game g3 = new Game("Resident Evil Code: Veronica" ,4.6,85);

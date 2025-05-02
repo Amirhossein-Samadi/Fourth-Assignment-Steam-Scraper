@@ -1,13 +1,16 @@
 import java.util.Objects;
 
 public class Game {
+
     private String name;
     private double rating;
-    private int price;
+    private double price;
 
-    public Game(String name, double rating, int price) {
-        //TODO
-
+    public Game(String name, double rating, double price)
+    {
+        this.name = name;
+        this.rating = rating;
+        this.price = price;
     }
 
     public String getName() {
@@ -19,18 +22,19 @@ public class Game {
         return rating;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
     @Override
     public String toString() {
-        //TODO
-        return "";
+        return String.format("Name: %s | Rating: %.1f | Price: $%.2f", name, rating, price);
     }
 
+
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)
+    {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Game game = (Game) o;
